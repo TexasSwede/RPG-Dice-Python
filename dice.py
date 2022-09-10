@@ -12,10 +12,9 @@ print(f'''{BOLD}{GREEN}
 *     Role Playing Game - Dices    *
 *               by                 *
 *  (c) 2022 Karl-Henry Martinsson  *
-*  License: MIT                    *
+*         License: MIT             *
 ************************************
 {ENDC}
-Dice supported: D4, D6, D8, D10, D12 and D20
 ''')
 
 # Continue to roll new dices until rollAgain is set to false
@@ -30,10 +29,10 @@ while rollAgain:
     # Split the entered combination into number of rolls to make
     # and number of sides on the dice to use. 
     values = diceCombination.upper().split("D")
-    # If there are not exactly two values, the correct format was not used
-    if len(values)!=2:
+    # If there are not exactly two integer values, the correct format was not used
+    if len(values)!=2 or not values[0].isnumeric() or not values[0].isnumeric():
         print("Use the format xDn, where x is the number of times to roll")
-        print("and n is the number of sides on the dice.")
+        print("and n ixs the number of sides on the dice.")
         print("Examples: 3D6, 1D8, 2D10")
     else:
         # Set min and max values for the dice
